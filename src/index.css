@@ -43,8 +43,10 @@
 
     /* Custom tokens */
     --hero-overlay: 0 0% 18%;
-    --section-alt: 210 20% 97%;
+    --section-alt: 42 50% 94%;
+    --section-warm: 42 56% 96%;
     --whatsapp: 142 70% 45%;
+    --soft-pink: 6 60% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
