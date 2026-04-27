@@ -53,6 +53,8 @@ export default {
         },
         whatsapp: "hsl(var(--whatsapp))",
         "section-alt": "hsl(var(--section-alt))",
+        "section-warm": "hsl(var(--section-warm))",
+        "soft-pink": "hsl(var(--soft-pink))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
