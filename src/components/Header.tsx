@@ -75,7 +75,9 @@ const Header = () => {
           <div className="md:hidden bg-background border-t px-4 pb-4 animate-fade-in">
             <div className="flex flex-col gap-4 pt-4">
               <a href="#inicio" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Início</a>
-              <a href="#servicos" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Vacinas</a>
+              <a href="#faixas" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Faixas Etárias</a>
+              <a href="#como-funciona" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Como Funciona</a>
+              <a href="#vacinas" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Vacinas</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Contato</a>
               <a
                 href={WHATSAPP_URL}
