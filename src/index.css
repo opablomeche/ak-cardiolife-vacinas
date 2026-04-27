@@ -6,7 +6,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Warm cream base inspired by Mil Vacinas */
+    --background: 42 56% 96%;
     --foreground: 0 0% 18%;
 
     --card: 0 0% 100%;
@@ -15,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 18%;
 
-    /* Cardio Life red from logo */
+    /* Cardio Life red as main accent */
     --primary: 0 72% 51%;
     --primary-foreground: 0 0% 100%;
 
@@ -23,11 +24,11 @@
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Light gray surfaces */
-    --muted: 210 20% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* Soft surfaces */
+    --muted: 42 40% 92%;
+    --muted-foreground: 0 0% 38%;
 
-    /* Teal/green for CTA - from Cardio Life green button */
+    /* Cardio Life green for CTAs */
     --accent: 145 63% 42%;
     --accent-foreground: 0 0% 100%;
 
@@ -42,8 +43,10 @@
 
     /* Custom tokens */
     --hero-overlay: 0 0% 18%;
-    --section-alt: 210 20% 97%;
+    --section-alt: 42 50% 94%;
+    --section-warm: 42 56% 96%;
     --whatsapp: 142 70% 45%;
+    --soft-pink: 6 60% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

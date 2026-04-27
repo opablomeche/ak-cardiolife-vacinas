@@ -38,11 +38,17 @@ const Header = () => {
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             <a href="#inicio" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Início
             </a>
-            <a href="#servicos" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#faixas" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+              Faixas Etárias
+            </a>
+            <a href="#como-funciona" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+              Como Funciona
+            </a>
+            <a href="#vacinas" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Vacinas
             </a>
             <a href="#contato" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
@@ -69,7 +75,9 @@ const Header = () => {
           <div className="md:hidden bg-background border-t px-4 pb-4 animate-fade-in">
             <div className="flex flex-col gap-4 pt-4">
               <a href="#inicio" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Início</a>
-              <a href="#servicos" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Vacinas</a>
+              <a href="#faixas" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Faixas Etárias</a>
+              <a href="#como-funciona" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Como Funciona</a>
+              <a href="#vacinas" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Vacinas</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="font-heading font-semibold text-foreground">Contato</a>
               <a
                 href={WHATSAPP_URL}
