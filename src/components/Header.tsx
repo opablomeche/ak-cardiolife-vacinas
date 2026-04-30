@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-cardiolife.webp";
+import logo from "@/assets/logo-cardiolife-blue.png";
 import { Phone, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 
