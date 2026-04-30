@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-cardiolife.webp";
+import logo from "@/assets/logo-cardiolife.png";
 
 const Footer = () => {
   return (
