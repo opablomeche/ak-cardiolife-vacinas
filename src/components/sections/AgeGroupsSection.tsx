@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Baby } from "lucide-react";
 import child from "@/assets/age-child.jpg";
 import teen from "@/assets/age-teen.jpg";
@@ -43,11 +44,27 @@ const ages = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09 } },
+};
+
 const AgeGroupsSection = () => {
   return (
     <section id="faixas" className="section-padding bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          className="text-center mb-14"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <span className="text-primary font-heading font-semibold text-sm uppercase tracking-widest">
             Faixas Etárias
           </span>
@@ -57,14 +74,22 @@ const AgeGroupsSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Selecione a faixa etária para ver as vacinas específicas disponíveis.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {ages.map((age) => (
-            <a
+            <motion.a
               key={age.title}
               href={`#${age.target}`}
-              className="group bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-xl transition-all border border-border hover:-translate-y-1"
+              variants={fadeUp}
+              className="group bg-card rounded-2xl p-6 text-center shadow-sm border border-border transition-shadow hover:shadow-xl"
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
             >
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-muted flex items-center justify-center ring-4 ring-primary/10 group-hover:ring-primary/30 transition-all">
                 {age.image ? (
@@ -87,9 +112,9 @@ const AgeGroupsSection = () => {
               <p className="text-sm text-muted-foreground leading-snug">
                 {age.description}
               </p>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

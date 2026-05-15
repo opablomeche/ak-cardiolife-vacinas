@@ -1,12 +1,20 @@
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 import logo from "@/assets/logo-cardiolife.png";
 import { Phone, MapPin, Menu, X } from "lucide-react";
-import { useState } from "react";
 
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send?phone=5562994031244&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20vacina%C3%A7%C3%A3o.";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="w-full">
@@ -31,7 +39,12 @@ const Header = () => {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-background shadow-sm sticky top-0 z-50">
+      <nav
+        className={cn(
+          "bg-background sticky top-0 z-50 transition-all duration-300",
+          scrolled ? "shadow-md backdrop-blur-sm" : "shadow-sm"
+        )}
+      >
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           <a href="#inicio">
             <img src={logo} alt="Cardio Life" className="h-14 md:h-16" />
@@ -39,19 +52,19 @@ const Header = () => {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-7">
-            <a href="#inicio" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#inicio" className="nav-link font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Início
             </a>
-            <a href="#faixas" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#faixas" className="nav-link font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Faixas Etárias
             </a>
-            <a href="#como-funciona" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#como-funciona" className="nav-link font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Como Funciona
             </a>
-            <a href="#vacinas" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#vacinas" className="nav-link font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Vacinas
             </a>
-            <a href="#contato" className="font-heading font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="#contato" className="nav-link font-heading font-semibold text-foreground hover:text-primary transition-colors">
               Contato
             </a>
             <a

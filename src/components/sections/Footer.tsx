@@ -1,8 +1,15 @@
+import { motion } from "framer-motion";
 import logo from "@/assets/logo-cardiolife.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground py-10 px-4">
+    <motion.footer
+      className="bg-secondary text-secondary-foreground py-10 px-4"
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+    >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
@@ -23,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

@@ -1,11 +1,11 @@
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import AgeGroupsSection from "@/components/AgeGroupsSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import VaccinesSection from "@/components/VaccinesSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Header from "@/components/layout/Header";
+import HeroSection from "@/components/sections/HeroSection";
+import AgeGroupsSection from "@/components/sections/AgeGroupsSection";
+import HowItWorksSection from "@/components/sections/HowItWorksSection";
+import VaccinesSection from "@/components/sections/VaccinesSection";
+import ContactSection from "@/components/sections/ContactSection";
+import Footer from "@/components/sections/Footer";
+import WhatsAppFloat from "@/components/sections/WhatsAppFloat";
 
 const Index = () => {
   return (

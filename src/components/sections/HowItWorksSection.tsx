@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Search, CalendarCheck, Building2, CreditCard } from "lucide-react";
 
 const WHATSAPP_URL =
@@ -26,11 +27,27 @@ const steps = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
 const HowItWorksSection = () => {
   return (
     <section id="como-funciona" className="section-padding bg-section-alt">
       <div className="container mx-auto">
-        <div className="text-center mb-14">
+        <motion.div
+          className="text-center mb-14"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <span className="text-primary font-heading font-semibold text-sm uppercase tracking-widest">
             Passo a Passo
           </span>
@@ -40,13 +57,20 @@ const HowItWorksSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Processo simples e seguro para agendar sua vacinação presencial.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {steps.map((step, idx) => (
-            <div
+            <motion.div
               key={step.title}
-              className="relative bg-card rounded-2xl p-6 shadow-sm border border-border"
+              variants={fadeUp}
+              className="relative bg-card rounded-2xl p-6 shadow-sm border border-border transition-shadow hover:shadow-md"
             >
               <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-primary-foreground font-heading font-bold flex items-center justify-center shadow-md">
                 {idx + 1}
@@ -60,20 +84,29 @@ const HowItWorksSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
-          <a
+        <motion.div
+          className="text-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <motion.a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-accent-foreground font-heading font-bold text-lg px-10 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+            className="bg-accent text-accent-foreground font-heading font-bold text-lg px-10 py-4 rounded-lg shadow-lg inline-flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.04, boxShadow: "0 8px 28px rgba(0,0,0,0.14)" }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
           >
             Agendar Sua Vacinação
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

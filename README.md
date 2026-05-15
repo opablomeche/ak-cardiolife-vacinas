@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Cardio Life — Landing Page
 
-## Project info
+Landing page institucional para a **Cardio Life**, clínica de vacinação em Anápolis - GO.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Stack
 
-## How can I edit this code?
+- [React 18](https://react.dev/)
+- [Vite 5](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Router DOM](https://reactrouter.com/)
 
-There are several ways of editing your application.
+## Estrutura do projeto
 
-**Use Lovable**
+```
+src/
+├── assets/               # Imagens e logo
+├── components/
+│   ├── ui/               # Componentes shadcn/ui
+│   ├── layout/           # Header, NavLink
+│   └── sections/         # Seções da landing page
+├── hooks/                # Hooks customizados
+├── lib/                  # Utilitários (utils.ts)
+├── pages/                # Páginas (Index, NotFound)
+├── App.tsx
+├── main.tsx
+└── index.css
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Rodar localmente
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Instalar dependências
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2. Iniciar servidor de desenvolvimento (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Build para produção
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+A pasta `dist/` será gerada com os arquivos estáticos prontos para deploy.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Para pré-visualizar o build localmente:
 
-## What technologies are used for this project?
+```sh
+npm run preview
+```
 
-This project is built with:
+## Deploy no Vercel
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Acesse [vercel.com](https://vercel.com) e importe o repositório GitHub
+2. O Vercel detecta automaticamente o Vite — nenhuma configuração extra é necessária
+3. Configurações padrão:
+   - **Framework**: Vite
+   - **Build command**: `npm run build`
+   - **Output directory**: `dist`
+   - **Install command**: `npm install`
+4. Clique em **Deploy**
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Para deploys subsequentes, basta fazer push na branch `main`.
