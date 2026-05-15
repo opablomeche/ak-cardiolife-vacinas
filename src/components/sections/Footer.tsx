@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="Cardio Life" className="h-12 brightness-0 invert" />
+            <img src={logo} alt="Cardio Life" className="h-12" style={{ filter: 'brightness(0) saturate(100%) invert(18%) sepia(96%) saturate(4000%) hue-rotate(350deg) brightness(90%)' }} />
             <div>
               <p className="font-heading font-semibold">Cardio Life</p>
               <p className="text-sm text-secondary-foreground/60">Centro de Vacinação Especializada</p>

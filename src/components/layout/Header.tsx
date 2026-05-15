@@ -47,7 +47,7 @@ const Header = () => {
       >
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
           <a href="#inicio">
-            <img src={logo} alt="Cardio Life" className="h-14 md:h-16" />
+            <img src={logo} alt="Cardio Life" className="h-14 md:h-16" style={{ filter: 'brightness(0) saturate(100%) invert(18%) sepia(96%) saturate(4000%) hue-rotate(350deg) brightness(90%)' }} />
           </a>
 
           {/* Desktop */}
